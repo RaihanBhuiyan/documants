@@ -1,23 +1,102 @@
-# Document Managment System
-A somewhat simple document management system for an organization or a medium-sized business with branches and departments based on the [Laravel] PHP web framework `version 5.5` 
+# e-Document Management System
 
-### Functionality
-- Documents CRUD and file uploads
-- Branches CRUD
-- Departments CRUD
-- Users CRUD plus others features like activating or deactivating accounts, changing passwords and granting or revoking admin rights
+## Overview
 
-### To get started
-1.  Create the database in mysql(**Note**: Make sure you have no database named `dms` in your mysql setup because it will be dropped, alternatively you can rename the database in the file `dms.sql` to something else)
+e-Document Management is a Laravel 8-based document management system designed for organizations and enterprises to maintain a paperless workflow. The system allows users to upload, store, manage, and share documents efficiently while providing a custom scanner to compare current and previous versions of documents. It also includes email, SMS, and push notifications for seamless user communication.
 
-    `mysql -u root -p < dms.sql`
+## Technologies Used
 
-2. Within the project root, create folder under the `public` called `static`, then under `static` create a folder called `uploads` after which the structure should look something similar to
+- **Laravel 8** - Backend framework
+- **MySQL** - Database management
+- **JavaScript & Blade** - Frontend UI
+- **Custom Scanner** - For document comparison
+- **Mail, SMS & Push Notifications** - User alerts and communication
 
-3.Admin Access
-User Name - admin
-Password - admin
-4.User Access
-User Name -user
-Password - password
-    ```
+## Key Features
+
+1. **Document Management**
+   - Upload, store, and organize documents (PDF, MS Word, Excel, etc.)
+   - Version control to track document changes
+   - Custom scanner for document comparison
+
+2. **User & Access Management**
+   - Admin panel with full access control
+   - User authentication and role-based permissions
+   - Grant or revoke document access similar to Google Docs
+
+3. **Collaboration & Sharing**
+   - Share documents with multiple users
+   - Set access time frames for shared documents
+   - Track document access and edits
+
+4. **Notifications & Alerts**
+   - Email, SMS, and push notifications for document updates
+   - Automatic reminders for pending actions
+
+5. **Branch & Department Management**
+   - Organize documents by branches and departments
+   - Assign specific access rights based on organizational structure
+
+## Installation Guide
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/RaihanBhuiyan/documants.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd e-document-management
+   ```
+3. Install dependencies:
+   ```sh
+   composer install
+   npm install
+   ```
+4. Set up the environment:
+   ```sh
+   cp .env.example .env
+   php artisan key:generate
+   ```
+5. Create the database and import `dms.sql`:
+   ```sh
+   mysql -u root -p < dms.sql
+   ```
+6. Run database migrations:
+   ```sh
+   php artisan migrate --seed
+   ```
+7. Start the server:
+   ```sh
+   php artisan serve
+   ```
+
+## Default User Credentials
+
+**Admin Access:**
+- Username: `admin`
+- Password: `admin`
+
+**User Access:**
+- Username: `user`
+- Password: `password`
+
+## Usage
+
+- Upload, manage, and share documents securely.
+- Compare current and previous versions of documents.
+- Set document access permissions and timeframes.
+- Get notified via email, SMS, or push notifications.
+
+## Contribution
+
+Contributions are welcome! Please follow the standard GitHub flow:
+
+1. Fork the repository.
+2. Create a new branch.
+3. Commit changes and push.
+4. Submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
